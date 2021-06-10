@@ -108,23 +108,42 @@ Image --> Pretrained model (Feature extracter)---> Embedding ---> Fully connecte
   - Unsupervised Learning : (Track object in video)
   - Optical flow: Apparant flow of object motion (pattern)- Displacement of pixels in consecutive frames
   - 
-
-______________________________________________________________________________________________________________________
+--------------------------------------------------------------------------------------------------
 ## **Lecture :03 Autoencoders , VAE, and style transfer**
 
 ### **Autoencoders**: 
-    - Unsupervised Approach for learning a lower dimension feature representation frpm unlabelled training data
-    - Encoder and Decoder 
-    - Encoder: Higher dimension to lower Dimension( Bottleneck Layer)- feature vector
-    - Decoder: use low dimension feature vector to reconstruct the input image
-    -  Goal of Autoencoder learning to minimize the reconstruction loss
-    - Applications of Autoencoders:
+   - Unsupervised Approach for learning a lower dimension feature representation frpm unlabelled training data
+   - Encoder and Decoder 
+   - Encoder: Higher dimension to lower Dimension( Bottleneck Layer)- feature vector
+   - Decoder: use low dimension feature vector to reconstruct the input image
+   -  Goal of Autoencoder learning to minimize the reconstruction loss
+   - Applications of Autoencoders:
         1. Pre-training: i.e Medical CT images as these images are very different from imagenet data, we can't use
         pre-trained model on imagenet dataset.
         2. Train it on large amount of unlabelled images and then supervised training 
         3. get pixel wise prediction : Segementation 
-        ### **Sementic Segementation
-        - SegNet: for Segementation 
+        ### **Sementic Segementation**
+      -**SegNet**: for  Semantic Segementation 
+        - Encoder-decoder based segmentation method
+        - 1. Encoder: Convolution and max polling performed. (2x2- max pooling on Vgg16)
+        - 2. Decoder: Upsampling and convolution is performed : max pooling is recalled (Unpooling)- Transposed Convolution
+        - last layer: K-Class softmax to predict class of pixel
+        - Types of Upsampling: Instead of filling zero while unpooling
+           -  Interpolation i.e nearest neibhour interpolation (fill value of nearest), few artifact
+           -  Fix unpooling : unpooling + Convolution
+           -  Unpooling : Deconvolution: Keep the locations where max came from : convolve with transposed filters
+    #### U-Net: skip connections- a CNN for biomedical image segmentation:
+     - Bolttlenect layer: contains high level information of image in compressed manner which is used by decoder to reconstruct the image again
+     -  Goal is to resonstruct the image with max possible imformation
+     - Low level information is not provided to the decoder that's why quality of constructed image is not good
+     -  Low level information is lost while convoution and only high level features are carried by bottleneck layer
+     - **Decoder need both high and low level information to reconstruct good quality image**: 
+     -  In U-Net skip connections combine both low and high level information feature map and : pass low level information to decoder
+     - i.e ResNet:  similar intuition to pass information directly through residual connections:
+     - ![image](https://user-images.githubusercontent.com/85448160/121581189-31b16780-ca4b-11eb-9f37-ec772008751b.png)
+     - skip connections: skip some layer in the neural network and feeds the output of one layer as the input to the next layers
+     
+     -  
 
 
  
