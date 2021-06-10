@@ -141,9 +141,59 @@ Image --> Pretrained model (Feature extracter)---> Embedding ---> Fully connecte
      -  In U-Net skip connections combine both low and high level information feature map and : pass low level information to decoder
      - i.e ResNet:  similar intuition to pass information directly through residual connections:
      - ![image](https://user-images.githubusercontent.com/85448160/121581189-31b16780-ca4b-11eb-9f37-ec772008751b.png)
-     - skip connections: skip some layer in the neural network and feeds the output of one layer as the input to the next layers
-     
-     -  
+     - **skip connections: skip some layer in the neural network and feeds the output of one layer as the input to the next layers**
+     #### **Ways to do skip connections:
+              - 1. Additions : as in ResNet : for avoiding gradient vanishiing and passing features from lower layers to upper layers 
+              - 2. Concatenation : DenseNet: Feature resusability by concatenating it to high level features 
+        - Long and Short skip connections
+        - Short skip connection: (Resnet)
+        - Long Skip Connections: i.e Autoencoders
+        - **U-Net: Encoder-Decoder + Skip Connections :
+        -  **Using Skip Connections fine-gained informations/details  can be recovered in the decoder prediction: 
+        -  Used mainly where output spatial dimension is same as input ans symmetrical architecture
+        - **long skip connections are used to pass features from the encoder path to the decoder path in order to recover spatial information lost during downsampling**
+        - Short skip connections appear to stabilize gradient updates in deep architectures. Finally, skip connections enable feature reusability and stabilize training and convergence.
+ #### **Autoincoders in Vision**:
+ -  SegNet: semantic Segmentation
+ -  Monocular Depth Prediction: (Generally we need two cameras for estimating depths of object(two eyes to trianglate the depth)
+ -  Image Super Resolution:->
 
+### **Generative Models**:  Given training data-> Generate new samples from same distribution
+- Types of Geneative Models: 1. Explicit density (i.e VAE) 2. Implicit Density (GAN)
+### ** Variational Autoencoder**: when we want to sample from bottleneck layer
+- Sample from latent distribution to gerenate new sample output
+- in VAE : latent distribution is gaussian
+- Encoder: convert images to a bottleneck latent gaussian space
+- Bottleneck space: Gaussian -> a sample z is passed to autoecoder for geneating image
+
+### Image Synthesis ( Without GANs)
+- Semantic Segmentation Image --->> Real Image
+- Use Perceptual loss for high quality results:
+- Perceptual loss/content loss: measure content of image
+- compare the ground truth and constructed image  1. Feature map of generated image  2. feature map of ground truth image  --L2 loss
+- Neural Network sees both black car and white car same way as they are same simentaically : so feature maps will be silimar
+- **So Do not compare pixels but compare feature maps**
+- so Use VGG pretrained model for feature map representation and compare the maps for content loss
+- Content loss was originally not used for image synthesis but for Style transfer
+
+### ** Style Transfer**:
+ - 1. Content Image   2. Style Image
+ - create a new image with help of both of above
+ - Content loss: Feature Representation similarity
+ - Style Loss: Compare gram metrices : Preserves the stylic features not content
+ - slow 
+
+#### Fast style transfer : use neural network
+
+
+-----------------------------------------------------------------------------------------------------------------
+## **Lecture: 04- Graph Neural Networks and Attention**
+
+- 
+
+ - 
+
+
+-  
 
  
