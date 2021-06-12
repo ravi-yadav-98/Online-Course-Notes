@@ -188,10 +188,52 @@ Image --> Pretrained model (Feature extracter)---> Embedding ---> Fully connecte
 
 -----------------------------------------------------------------------------------------------------------------
 ## **Lecture: 04- Graph Neural Networks and Attention**
+- Regularity on the domain: i.e in images order of pixel is important
+- New Domain: Graph i.e Point Colud (3D): Irregularity
+- Permutation Invariance
+- Transformation Invariance
+- Example: A citation Network: where each node is a paper and connection(edge) is citation
+- Other example: Social Network, Recommendation Systems
+- we can not apply convolutions to graphs
+### Deep learning on Graphs: 
+-Challenges:
+         - Variable size input (irregular shape)
 
-- 
-
+-  Node and edge embeddings are needed.
+-  Goal is to encode contexual graph information in node embeddings by iteratively combining neighboring features
+- Embeddings are updated in hidden layers
+### Neural message passing:
+   - at each iteration,every node receives features from its neighboring nodes
+   - these featres are then aggregated with an order invariant operation and combined with the current feature with learnable function
+   - to apply convolution in graphs ---use permutation invariance
+ - mostly node embeddings are updated.
  - 
+Applications:
+  - 1. Multi-Object tracking with Graphs
+  - 2. 
+### Sequence to sequence (seq2Seq) Learning:
+### Transformers : use attention only (No RNN, NO CNN, Only Attention)
+- Graphs that show relationship b/w words
+- Transformers as Graphs NN
+- Transformer are based on Graph attention networks
+- Attention for Vision: -->  We use whole image to make classifictaion
+             - Not all pixels are equally important
+             - only object pixels are important
+             - so it will be efficient if use patches for classification
+             
+ #### Image Captioning : Input : Image, Output: A sentence describing image
+ -  Encoder: computes the feature maps,- VGG Net, Alex Net
+ -  Decoder: An attention based RNN
+ -  In each step  the decoder computes an attention map over the entire image, effectly decide which region to focus on.
+ -  It receives a context vector, which is the weighted average of the conv net feature
+ -  Convention Captioning: Encoder: CNN, Decoder: LSTM(sees image once)
+ -  Attention based captioning: Decoder uses attention- look only those regions of image which are important for captioning.
+ -  Type of attention:
+ -  soft attention: determine processes which can be backprop- deterministic-- focuses on object
+ -  hard attention: stochastic process, gradient is estimated through Monte carlo sampling
+ -   soft attention is widely used in optimization
+ -   
+ -   
 
 
 -  
