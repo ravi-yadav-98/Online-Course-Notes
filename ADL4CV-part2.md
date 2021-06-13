@@ -40,7 +40,29 @@
   -  Downsample --> Avg Pooling , conv+stride
   -  Upsample--> deconv+stride, pixelshuffle
   -  Exponential average weights (Problem if noise in D due to SGD)
- 
+ ### Common problems with GAN:
+ - 1. Vanishing Gradient: if discriminator is too good, then generator training will fail due to vanishing gradient:
+       - Remedies: Wasserstein loss, modifiy minimax loss
+ - 2. Model Collapse:  owever, if a generator produces an especially plausible output, the generator may learn to produce only that output. In fact, the generator is always trying to find the one output that seems most plausible to the discriminator.
+ -   -- Generator outputs only small type of images
+ -  3. Failure to converge
+
+### Variations of GANs:
+- 1. Progressive GANs: In a progressive GAN, the generator's first layers produce very low resolution images, and subsequent layers add details. 
+- 2. Conditional GANs:  Conditional GANs train on a labeled data set and let you specify the label for each generated instance. For example, an unconditional MNIST GAN would produce random digits, while a conditional MNIST GAN would let you specify which digit the GAN should generate. 
+      - " add semantic meaning to latent space
+- 3. Image-to-Image Translation:- Image-to-Image translation GANs take an image as input and map it to a generated output image with different properties. For example, we can take a mask image with blob of color in the shape of a car, and the GAN can fill in the shape with photorealistic car details
+
+- 4. CycleGAN :- CycleGANs learn to transform images from one set into images that could plausibly belong to another set. For example, a CycleGAN produced the righthand image below when given the lefthand image as input. It took an image of a horse and turned it into an image of a zebra.
+- 5. Text-to-image synthesis: Text-to-image GANs take text as input and produce images that are plausible and described by the text. For example, the flower image below was produced by feeding a text description to a GAN.
+- 6. Super-Resolution:-
+- 7. Face Inpainting:- GANs have been used for the semantic image inpainting task. In the inpainting task, chunks of an image are blacked out, and the system tries to fill in the missing chunks
+- 8- Text to speech
+- 
+
+
+
+ -     
 - **New Objective functions (GAN Types)**
 - Energy based GAN (EBGAN)
 - Least Square GAN (LSGAN)
@@ -57,6 +79,19 @@
 
 ## Lecture: 06 Generative Adversarial Networks (GAN - part:02
 ### GAN Architecture:
+- Multi-Scale GAN: Discriminator works at every scale 
+- Ex: Progressive GANs: Generator produces small image(low resolution) in begining (4x4) then grow in each iteration 8x8 --> 16x16 --->..........1024x1024
+- GAN- Manifold (a+b-c)  sungrasses man + female - man = sunglasses female
+- cGAN (sketch to image)
+- iGAN (interactive GANs): input image(i.e shoes) (Project on manifold)--> change/manipulate the images (size) ---> reproject to original (reconstruct)
+     - projecting image to manifold
+-
+
+- 
+- 
+- 
+
+
 -  
 
 
