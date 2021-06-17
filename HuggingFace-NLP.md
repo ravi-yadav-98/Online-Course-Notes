@@ -28,7 +28,7 @@
    ### Zero-shot-claffication:--> label the string (i.e education, polictics) for which the sentence related to
    
 ### **How Transformers work?**
-   #### **History**
+#### **History**
     - The Transformer architecture was introduced in June 2017.
     -  June 2018, GPT, the first pretrained Transformer model, used for fine-tuning on various NLP tasks and obtained state-of-the-art results
     -  October 2018: BERT, another large pretrained model, this one designed to produce better summaries of sentences
@@ -121,7 +121,12 @@ the words positioned before a given word in the input.
  
  
  -----------------------------------------------------------------------------------------------------------------------------
- ### Chapter:02
+ ### Chapter:02 Tokenizer
+ - Understanding low level task of Transformer's pipeline (preprocessing, post-processing)
+ - To do this we use a tokenizer, which will be responsible for:
+1. Splitting the input into words, subwords, or symbols (like punctuation) that are called tokens
+2. Mapping each token to an integer
+3. Adding additional inputs that may be useful to the model
  
  
  
