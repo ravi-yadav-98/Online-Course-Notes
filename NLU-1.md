@@ -90,6 +90,77 @@
  
  
  ### Week 2
+ - **Text Classification and Naive Bayes**
+  - It is assigning subject categories , topics or genres to text
+  - example 1: email spam /non-spam,  arthor of paper
+  - example 2: Positive pr negative movie review (or product review)
+  - Example 3: subject of article (topic)
+  - Classification Methods: 
+  - 1. Hand-Coded rules (i.e rule based spam detection)i.e blacklist words
+      - accuracy can be high
+      - if rules are defined by expert
+      - expensive
+  - 2. Supervised Machine Learning
+      - ML classifier
+      - training data is used (document , class)--> (d1,c1) (d2,c3)
+      - Naive Bayes, Logistic, SVM, KNN
+  - ** The Naive Bayes Classifier**
+      - based or bayes rule
+      - used bag or words (BOG)- document --> words --> mixed
+      - word --> count in document 
+      - classifier take BOG and predict class
+      - Y(words,count)--> class
+      - goal is to find p(c/d) = P(d/c)*P(c)/P(d)
+      - Cout = argmax(P(c/d) of all vaues  ---> maximizing posteriori
+      - P(d) is same for all classes
+      - class  = P(x1,x2,x3....xn/c)P(c)
+      - x1,x2,x3.....xn = words
+      - BOG Assumptions: position doesn't matter
+      - featue probabilities P(x/c) is independent given class
+      - so P(x1,x2...xn/c) = P(x1/c)*P(x2/c).......P(xn/c)
+      - P(x/c) = prob of word given class 
+      - i.e how ofter word is present in given class
+      - Problem: multiplying lots of probabilities can be floating point underflow. so log is used
+      - Linear classifier
+    
+  - **Learning the Multinomial naive bayes model**
+      - 1. Maximum likelihood estimates (MLE)
+      -  simply use frequencies in the data (P= document(C= cj)/total doc)
+      -  parameter estimate:
+      - Problem with MLE: if perticular word was not in the training (gives zero probability) 
+      - solution : add 1 smoothing ( add 1 to all word count and each word count)
+      - unknown words which appear in test data(not in training) : we ignore
+      - stop words: frequent words: the, an , a : removed(top frequency words)
+
+
+  - **sentiment analysis** using binary naive bayes
+      - 
+
+
+      - 
+  - 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  - Name entity recongition[NER]: proper name
  - 4 tags : PER(person), LOC(location), ORG(organization), GPE(geo political entity)
  - also tags inclued : dates, price
