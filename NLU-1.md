@@ -134,6 +134,9 @@
 
 
   - **sentiment analysis** using binary naive bayes
+      - prior = class probability in document = total no of negative/positive doc / total doc 
+      - for sentiment analysis word occurnce seems to be more important that frequency
+      - Multinomial naive bayes: binary NB
       - 
 
 
