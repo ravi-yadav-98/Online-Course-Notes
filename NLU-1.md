@@ -137,7 +137,20 @@
       - prior = class probability in document = total no of negative/positive doc / total doc 
       - for sentiment analysis word occurnce seems to be more important that frequency
       - Multinomial naive bayes: binary NB
-      - 
+      - **Negation in sentiment analysis:**
+      - Negation change the meaning i.e don't like --> Negative  don't disike-> positive
+      - Lexicons: pre-built word list (if labelled training data is not available)i.e MQPA
+   -  **Advantage of Naive Bayes:*
+      - very fast , lower storage requirement
+      - work well with very small amounts of training data
+      - Robust to irrelevent features
+      - Optimal if independent assumption is followed
+
+  - Reuters text classification dataset
+ 
+ *********************************************************************************************************
+ ### generative and discriminative classifier:
+  - 
 
 
       - 
