@@ -22,17 +22,22 @@
 - **Word2Vec:**
 	- A framework for learning word vector
 	- Word Embedding is a language modeling technique used for mapping words to vectors of real numbers.
-	-  Corpus(corpora) to Word vectors
+	-  Corpus(corpora) to Word vectors(embedding)
 	-  work on probability model (predicting words around a center word)
 	-  start with random vectors
 	-  Distribution vector means: word vector know which word occur in context of itself(so it wil give high probablity)
 	-  Like if word is bank the  words like, branch, withdrawal, credit, debit , will be given high probability
 	-  Shallow 2 layer NN
 	-  Two architectures of Word2Vec:
+	-  Word2vec algorithm learns word associations from large text corpora
 	1. CBOW(continious Bag of words)--> predict current word given conext words
 	2. Skip gram  --> predict context words given current word
 	-  **The basic idea of word embedding is words that occur in similar context tend to be closer to each other in vector space.**
 	-  king-men+women= Queen
+	-  Python Library for word vector: Gensim
+	-  CBOW is faster while skip-gram does a better job for infrequent words.
+	-  Invented at Google
+	-  Milokov ----et al 2013 paper introduced word2vec
 
 
 ### Lecture:02
