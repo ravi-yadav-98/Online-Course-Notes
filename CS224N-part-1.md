@@ -19,11 +19,27 @@
 		- also called word embeddings
 		- not standard vectors
 		- dimension of vector is not fixed
-#### Word2Vec:
-		- A framework for learning word vector
-		- Corpus(corpora) to Word vectors
-		- 
-		- 
+- **Word2Vec:**
+	- A framework for learning word vector
+	- Word Embedding is a language modeling technique used for mapping words to vectors of real numbers.
+	-  Corpus(corpora) to Word vectors
+	-  work on probability model (predicting words around a center word)
+	-  start with random vectors
+	-  Distribution vector means: word vector know which word occur in context of itself(so it wil give high probablity)
+	-  Like if word is bank the  words like, branch, withdrawal, credit, debit , will be given high probability
+	-  Shallow 2 layer NN
+	-  Two architectures of Word2Vec:
+	1. CBOW(continious Bag of words)--> predict current word given conext words
+	2. Skip gram  --> predict context words given current word
+	-  **The basic idea of word embedding is words that occur in similar context tend to be closer to each other in vector space.**
+	-  king-men+women= Queen
+
+
+### Lecture:02
+-  
+		
+		
+		
 		
 		
 - 
