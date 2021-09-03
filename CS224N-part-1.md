@@ -41,7 +41,12 @@
 
 
 ### Lecture:02
--  
+-  Word2vec put similar words together in vector space.
+-  word2vec: two model variants
+-  1. Continious skip gram model (SG) --> Predicts context words(position independent) given center words
+-  2. Continious Bag of words(CBOG)  --> predict center words given bag of context words
+-  Naive softmax : expensive training skip gram model 
+-  skip-gram with negative sampling:
 		
 		
 		
