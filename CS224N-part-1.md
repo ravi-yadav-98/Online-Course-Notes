@@ -82,7 +82,26 @@
 	-  , Word2vec relies only on local information of language. That is, the semantics learnt for a given word, is only affected by the surrounding words.
 	-  Word2vec which captures local statistics do very well in analogy tasks.
 	-  Idea of GloVe: You can derive semantic relationships between words from the co-occurrence matrix
-	-  
+
+
+### Lecture:03
+- deep Learning: DNN
+- We learn both weights(W) and word vector together in DNN
+- **Name Entity Recognition**: find and classify names in Text (PER, ORG)
+- NER applications:
+	1. tracking Names in documents
+	2. Question Answering 
+	3. Information extraction
+	4. Slot filling
+- Entity class is ambigious and depends upon context
+- Hard  to find out boundaries
+- **Binary word window classification:**
+- Classifying single word is rarely done.(depends upon conetext)
+- window classification: classifying a word in its context window
+- NER of a word in context
+- Binary classification with unnormalized score:
+- 
+- 
 	
 
 
