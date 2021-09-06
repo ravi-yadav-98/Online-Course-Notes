@@ -101,8 +101,54 @@
 - NER of a word in context
 - Binary classification with unnormalized score:
 - 
+
+### Lecture: 04
+- In our model , we should use pre trained word vector as they are trained on a huge amount of data
+- if you have lagre data--> fine tune pretrained vectors
+- sigmoid, tanH--> rarely used, computationally expensive (used in gating(o ,1))
+- hard tanH--> -1, x, 1 is used
+
+
+### Lecrure:05
+- **Linguistic structure:** two structures
+- word>phrase>clauses-> sentences
+- phase: no subject and prediate (i.e in the room)
+- clause: has subject and predicate (She swims)
+- Parsing: create a parse tree from given sentence
+- A parse tree is a tree that highlights the syntactical structure of a sentence according to a formal grammar, for example by exposing the relationships between words or sub-phrases. Depending on which type of grammar we use, the resulting tree will have different features.
+- The goal of parsing to extract syntactic info.
 - 
-	
+- parsing techniques:
+	1. Parts of speech (POS) tagging: N, P, Adj, Adv, 
+	2. Shallow parsing or chunking : phrases (Noun phrase, verb phrase, adj phrase, adv phrase)
+	3. Constituency Parsing: A constituency parser can be built based on such grammars/rules, which are usually collectively available as context-free grammar (CFG) or phrase-structured grammar. The parser will process input sentences according to these rules, and help in building a parse tree.
+	5. Dependency Parsing:
+- **1. Consituency Parsing (Context free grammer)/ phase structure grammer**
+   - The constituency parse tree is based on the formalism of context-free grammars.
+   - In this type of tree, the sentence is divided into constituents, that is, sub-phrases that belong to a specific category in the grammar.
+   - Like Noun and verb phrase
+   - free word order languages
+   - i.e VP = verb+noun phrase
+   - S --> NP + VP
+   - A constituency parse tree always contains the words of the sentence as its terminal nodes
+   - All the other non-terminal nodes represent the constituents of the sentence.
+   - This representation is highly hierarchical and divides the sentences into its single phrasal constituents.
+   - To sum things up, constituency parsing creates trees containing a syntactical representation of a sentence, according to a context-free grammar. 
+   - Dependency parsing can be more useful for several downstream tasks like Information Extraction or Question Answering.
+
+- **2. Dependency Parsing:**: 
+   - In this the syntax of the sentence is expressed in terms of dependencies between words — that is, directed, typed edges between words in a graph.
+   -  when we want to extract sub-phrases from the sentence, a constituency parser might be better.
+   -  More formally, a dependency parse tree is a graph G = (V, E) where the set of vertices V contains the words in the sentence, and each edge in E connects two words.
+   -  The basic principle behind a dependency grammar is that in any sentence in the language, all words except one, have some relationship or dependency on other words in the sentence.
+   -  The word that has no dependency is called the root of the sentence. 
+   -   The verb is taken as the root of the sentence in most cases
+   -    All the other words are directly or indirectly linked to the root verb using links, which are the dependencies.
+   -    node: word, edges: dependencies
+   -    
+
+
+ 	
 
 
 
