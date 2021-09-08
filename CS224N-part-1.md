@@ -145,7 +145,25 @@
    -   The verb is taken as the root of the sentence in most cases
    -    All the other words are directly or indirectly linked to the root verb using links, which are the dependencies.
    -    node: word, edges: dependencies
-   -    
+
+
+
+- prepositional phrases create amibiguity in senences:
+- i.e Man killed man with knife.
+- human can easily interpret the words (not easy for computers)
+- type of ambiguities:
+- prepositional phrase ambiguity
+- coordination scope ambiguity
+- Adjectival modifier ambiguity
+- Verb phrase attachment ambiguity
+
+
+- methods of dependency parsing:
+- 1. Dynamic programming
+- 2. Graph algorithms
+- 3. Constraint satisfaction
+- 4. Transition based parsing
+- 
 
 
  	
